@@ -1,2 +1,8 @@
-package ru.vlsu.repository;public interface OrderRepository {
+package ru.vlsu.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import ru.vlsu.model.Order;
+@Repository
+public interface OrderRepository extends JpaRepository<Order, String> {
 }
