@@ -1,0 +1,17 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+      http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="20251002-003-add-fk-products-units" author="kirsenkodmitry">
+        <addForeignKeyConstraint
+                baseTableName="products"
+                baseColumnNames="unit_uuid"
+                referencedTableName="units"
+                referencedColumnNames="unit_uuid"
+                constraintName="fk_products_units"/>
+    </changeSet>
+
+</databaseChangeLog>
