@@ -1,9 +1,6 @@
-version: "3.8"
-
 services:
   product_service_db:
     image: mysql:8.0
-    container_name: product_service_db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 1234
@@ -15,7 +12,6 @@ services:
 
   product_service_app:
     build: .
-    container_name: product_service_app
     depends_on:
       - product_service_db
     ports:
