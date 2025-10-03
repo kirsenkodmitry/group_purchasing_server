@@ -1,0 +1,22 @@
+services:
+  order_service_db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: order_service_db
+    ports:
+      - "3308:3306"
+    volumes:
+      - /home/kirsenko/docker/mysql/order_service_db:/var/lib/mysql
+
+  order_service_app:
+    build: .
+    depends_on:
+      - order_service_db
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://order_service_db:3306/order_service_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
