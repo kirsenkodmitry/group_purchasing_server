@@ -21,6 +21,6 @@ services:
     ports:
       - "8082:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://product_service_db:3309/product_service_db
+      SPRING_DATASOURCE_URL: jdbc:mysql://product_service_db:3306/product_service_db
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: 1234
